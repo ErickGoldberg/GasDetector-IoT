@@ -9,11 +9,12 @@ namespace GasDetector.Helper
 
         public EmailService()
         {
-            _smtpClient = new SmtpClient("smtp.office365.com")
+            _smtpClient = new SmtpClient("smtp.gmail.com")
             {
                 Port = 587,
-                Credentials = new NetworkCredential("erick_goldberg@hotmail.com", "x"),
+                Credentials = new NetworkCredential("josesilvio.bs@gmail.com", "wyyi htbn yphf bvgx"),
                 EnableSsl = true,
+                UseDefaultCredentials = false
             };
         }
 
@@ -21,10 +22,10 @@ namespace GasDetector.Helper
         {
             var mailMessage = new MailMessage
             {
-                From = new MailAddress("erick_goldberg@hotmail.com"),
+                From = new MailAddress("josesilvio.bs@gmail.com"),
                 Subject = subject,
                 Body = body,
-                IsBodyHtml = true,
+                IsBodyHtml = false,
             };
             mailMessage.To.Add(to);
 
